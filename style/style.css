@@ -1,0 +1,341 @@
+/* Estilos Gerais - Tema Roxo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #5E4B8A;
+    min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4B3A73;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(164, 123, 202, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(164, 123, 202, 0.5);
+    padding-bottom: 0.75rem;
+    font-size: 2rem;
+}
+
+/* Cards de Livros */
+.livros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.livro-card {
+    background: #4B3A73;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(164, 123, 202, 0.2);
+}
+
+.livro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(164, 123, 202, 0.2);
+    border-color: rgba(164, 123, 202, 0.4);
+}
+
+.livro-imagem {
+    height: 220px;
+    background: linear-gradient(135deg, #4B3A73 0%, #5E4B8A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(164, 123, 202, 0.2);
+}
+
+.livro-info {
+    padding: 1.5rem;
+}
+
+.livro-info h3 {
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.livro-info p {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.livro-info p strong {
+    color: #ffffff;
+}
+
+.btn-detalhes {
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-detalhes:hover {
+    background: rgba(164, 123, 202, 0.1);
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #4B3A73;
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 650px;
+    box-shadow: 0 5px 25px rgba(164, 123, 202, 0.3);
+    position: relative;
+    border: 1px solid #ffffff;
+    animation: modalFadeIn 0.4s;
+}
+
+.close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    color: #c297da;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+/* Botões */
+.btn-locar, .btn-submit {
+    background: linear-gradient(to right, #A77BCA, #E4C1F9);
+    color: #000;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-locar:hover, .btn-submit:hover {
+    background: linear-gradient(to right, #ffffff, #A77BCA);
+    box-shadow: 0 4px 12px rgba(164, 123, 202, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #c7b1e7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5E4B8A;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header input[type="text"] {
+    padding: 8px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F2E6FF;
+    color: #5E4B8A;
+    font-weight: bold;
+}
+
+header button {
+    background-color: #A77BCA;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+header button:hover {
+    background-color: #5E4B8A;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #F2E6FF;
+    border-collapse: collapse;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid  #7234a4;
+}
+
+th {
+    background-color: #8f3dd2;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #b894ec;
+}
+
+tr:hover {
+    background-color: #9c5bc2;
+}
+
+button.devolver, button.excluir {
+    background-color: #5E4B8A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.devolver:hover, button.excluir:hover {
+    background-color: #A77BCA;
+}
+
+footer {
+    background-color: #5E4B8A;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para modal ou caixas usando transparências */
+.modal {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5E4B8A;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
