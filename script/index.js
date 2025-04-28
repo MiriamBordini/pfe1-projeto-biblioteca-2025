@@ -1,4 +1,3 @@
-// Dados dos livros
 const livros = [
     {
         id: 1,
@@ -72,12 +71,10 @@ const livros = [
     }
 ];
 
-// Inicializar localStorage
 if (!localStorage.getItem('locacoes')) {
     localStorage.setItem('locacoes', JSON.stringify([]));
 }
 
-// Carregar livros na tela
 function carregarLivros() {
     const container = document.getElementById('livros-container');
     if (!container) return;
@@ -97,7 +94,6 @@ function carregarLivros() {
     });
 }
 
-// Abrir modal de detalhes
 function abrirModalDetalhes(idLivro) {
     const livro = livros.find(l => l.id === idLivro);
     if (!livro) return;
@@ -115,7 +111,6 @@ function abrirModalDetalhes(idLivro) {
     document.getElementById('modal-detalhes').style.display = 'block';
 }
 
-// Fechar modais
 document.querySelectorAll('.close').forEach(btn => {
     btn.onclick = () => {
         document.getElementById('modal-detalhes').style.display = 'none';
@@ -123,7 +118,6 @@ document.querySelectorAll('.close').forEach(btn => {
     };
 });
 
-// Botão locar
 const btnLocar = document.getElementById('btn-locar');
 if (btnLocar) {
     btnLocar.onclick = () => {
@@ -132,7 +126,6 @@ if (btnLocar) {
     };
 }
 
-// Registrar locação
 const formLocacao = document.getElementById('form-locacao');
 if (formLocacao) {
     formLocacao.addEventListener('submit', function(e) {
@@ -155,7 +148,6 @@ if (formLocacao) {
     });
 }
 
-// Carregar locações
 function carregarLocacoes() {
     const tabela = document.querySelector('#tabela-locacoes tbody');
     if (!tabela) return;
@@ -175,7 +167,6 @@ function carregarLocacoes() {
     });
 }
 
-// Carregamento inicial
 document.addEventListener('DOMContentLoaded', () => {
     carregarLivros();
     carregarLocacoes();
