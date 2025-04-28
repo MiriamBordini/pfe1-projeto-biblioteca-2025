@@ -12,13 +12,13 @@ body {
     min-height: 100vh;
 }
 
-/* Tipografia */
+
 h1, h2, h3, h4 {
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-/* Cabeçalho */
+
 header {
     background-color: #4B3A73;
     color: #ffffff;
@@ -84,7 +84,7 @@ h2 {
     font-size: 2rem;
 }
 
-/* Cards de Livros */
+
 .livros-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -158,7 +158,7 @@ h2 {
     border-color: #ffffff;
 }
 
-/* Modais */
+
 .modal {
     display: none;
     position: fixed;
@@ -199,7 +199,7 @@ h2 {
     color: #ffffff;
 }
 
-/* Botões */
+
 .btn-locar, .btn-submit {
     background: linear-gradient(to right, #A77BCA, #E4C1F9);
     color: #000;
