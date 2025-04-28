@@ -86,7 +86,6 @@ function abrirLivros() {
     alert("Lista de livros:\n\n" + livros.map(l => `${l.titulo} - ${l.autor}`).join("\n"));
 }
 
-// Inicia carregando a tabela
 document.addEventListener("DOMContentLoaded", () => {
     renderTable();
 });
