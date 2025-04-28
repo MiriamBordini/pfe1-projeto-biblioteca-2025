@@ -328,7 +328,6 @@ footer {
     font-weight: bold;
 }
 
-/* Estilo para modal ou caixas usando transparências */
 .modal {
     background-color: rgba(255, 255, 255, 0.8);
     color: #5E4B8A;
